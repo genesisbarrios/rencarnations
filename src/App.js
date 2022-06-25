@@ -10,30 +10,6 @@ import { useState } from "react";
 import Deso from "deso-protocol";
 const deso = new Deso();
 
-const theme = createTheme({
-    palette: {
-        type: 'dark',
-    },
-    overrides: {
-        MuiButtonBase: {
-            root: {
-                justifyContent: 'flex-start',
-            },
-        },
-        MuiButton: {
-            root: {
-                textTransform: undefined,
-                padding: '12px 16px',
-            },
-            startIcon: {
-                marginRight: 8,
-            },
-            endIcon: {
-                marginLeft: 8,
-            },
-        },
-    },
-});
 
 const App = () => {
   const [loginResponse, setLoginResponse] = useState();
@@ -55,13 +31,11 @@ const App = () => {
   }
   if(loginResponse){
   return (
-      <ThemeProvider theme={theme}>
-                <Routes>
-                  <Route path="/" element={SpacesComponent()}/>
-                  <Route path="/Spaces" element={SpacesComponent()}/>
-                  <Route path="/Profile" element={ProfileComponent()}/>
-                </Routes>
-      </ThemeProvider>
+    <Routes>
+      <Route path="/" element={SpacesComponent()}/>
+      <Route path="/Spaces" element={SpacesComponent()}/>
+      <Route path="/Profile" element={ProfileComponent()}/>
+    </Routes>
   );
   }else{
     return (

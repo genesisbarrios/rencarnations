@@ -5,3 +5,6 @@ yelp api key: p9Z1TzHoaiuHZwfMkFuxw2aLAEvBy3eAaJeNeQ8cY4pt64J79T60itfsxI607J0RKf
 mongo db
 AlphabetAdmin 
 UFS8guMNKMvNgWht
+
+cockroach db pw
+cNrP45HhzW9f0D0VOOdv2A
