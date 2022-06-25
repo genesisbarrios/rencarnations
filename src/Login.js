@@ -15,17 +15,17 @@ const Login = (props) => {
         if(desoUser){
             console.log(desoUser.key)
             const ref = collection(db, "Users");
-            const q = query(ref, where("username", "==", desoUser.Profile.Username));
+            const q = query(ref, where("username", "==", desoUser.Profile.Username));// limit(1),
 
             const querySnapshot = await getDocs(q);
             if(querySnapshot.docs.length === 0){
                 console.log('Welcome to Alphabet Spaces. Adding you to our database..');
                 //const docResp = await setDoc(ref, {});
                 const res = await addDoc(ref, {
-                    PublicKey: JSON.stringify(desoUser.Profile.PublicKeyBase58Check),
-                    description: JSON.stringify(desoUser.Profile.Description),
-                    isVerified: JSON.stringify(desoUser.Profile.IsVerified),
-                    username: JSON.stringify(desoUser.Profile.Username)
+                    PublicKey: desoUser.Profile.PublicKeyBase58Check,
+                    description: desoUser.Profile.Description,
+                    isVerified: desoUser.Profile.IsVerified,
+                    username: desoUser.Profile.Username
                 });
                 //console.log(res);
             }else{

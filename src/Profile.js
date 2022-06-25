@@ -2,10 +2,8 @@
 import { useState } from "react";
 import { Key, ReactChild, ReactFragment, ReactPortal, useCallback, useEffect, useMemo } from 'react';
 
-const Spaces = (props) => {
-    const [sampleResponse, setSampleResponse] = useState();
+const Profile = (props) => {
     const [loginResponse, setLoginResponse] = useState();
-    const [postResponse, setPostResponse] = useState();
 
   let deso = props.deso;
   let callbackFunction = props.parentCallback;
@@ -34,15 +32,22 @@ const Spaces = (props) => {
         {loginResponse && 
             <div>
                 <h2>Profile</h2>
-                <p>{loginResponse.Profile.Username}</p>
-                <p>{loginResponse.Profile.PublicKey}</p>
-                <p>{loginResponse.Profile.Description}</p>
-                <p>{loginResponse.Profile.IsVerified}</p>
+                <p>Username: {loginResponse.Profile.Username}</p>
+                <p>PublicKey: {loginResponse.Profile.PublicKeyBase58Check}</p>
+                <p>Description: {loginResponse.Profile.Description}</p>
+                <p>Verified: {JSON.stringify(loginResponse.Profile.IsVerified)}</p>
 
+                <div>
+                    <h2>Following</h2>
+                </div>
+
+                <div>
+                    <h2>Friends</h2>
+                </div>
             </div>}
     </div>
     );
         
 };
 
-export default Spaces;
+export default Profile;

@@ -4,6 +4,12 @@ import { Key, ReactChild, ReactFragment, ReactPortal, useCallback, useEffect, us
 import {db, app} from "./firebase-config";
 import { getDocs, collection, deleteDoc, doc, getFirestore } from "firebase/firestore";
 import Container from 'react-bootstrap/Container';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+} from "react-router-dom";
 
 const Spaces = (props) => {
   const [spaces, setSpaces] = useState();
@@ -33,6 +39,10 @@ const Spaces = (props) => {
       setLoginResponse(props.loginResponse);
       console.log(loginResponse);
     }
+
+    if(spaces){
+      console.log(spaces);
+    }
   }, [loginResponse]);
 
   useLayoutEffect(() => {
@@ -40,12 +50,12 @@ const Spaces = (props) => {
 
     const getSpaces = async () => {
       const data = await getDocs(ref);
-      console.log('getSpaces'+data);
-      setSpaces( data.docs.map( (doc) => ({ ...doc.data()}) ) );
-      console.log(spaces);
+      console.log(data);
+      setSpaces( data.docs.map( (doc) => ({id:doc.id, ...doc.data()}) ) );
     }
 
     getSpaces();
+
   }, []);
 
 
@@ -55,11 +65,12 @@ const Spaces = (props) => {
         {spaces && (
           <div>
             {spaces.map((doc) => (
-              <div style={spacesStyle}>
-                 <p>{JSON.parse(JSON.stringify(doc.name))} </p>
-                 <img src={JSON.parse(JSON.stringify(doc.image))} style={spacesImgStyle}/>
-                 <div><a href={JSON.parse(JSON.stringify(doc.website))} target="_blank" style={{textDecoration: "none"}}>Website</a></div>
+              <Link to={`/Spaces/${doc.id}`} key={doc.id}>
+                <div style={spacesStyle}>
+                  <p>{JSON.parse(JSON.stringify(doc.name))} </p>
+                  <img src={JSON.parse(JSON.stringify(doc.image))} style={spacesImgStyle}/>
                  </div>
+              </Link>
             ))}
           </div>
         )}

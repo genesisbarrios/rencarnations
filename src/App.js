@@ -3,8 +3,9 @@ import { useMemo } from "react";
 import { createTheme, ThemeProvider } from "@material-ui/core";
 import Login from "./Login";
 import Spaces from './Spaces';
+import Space from './Space';
 import Profile from './Profile'
-import {Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import { useState } from "react";
 
 import Deso from "deso-protocol";
@@ -23,19 +24,31 @@ const App = () => {
      <Spaces deso={deso} parentCallback={callbackFunction} loginResponse={loginResponse}/>
     );
   }
+
+  const SpaceComponent = () => {
+    return (
+     <Spaces deso={deso} loginResponse={loginResponse}/>
+    );
+  }
+  
   
   const ProfileComponent = () => {
     return (
      <Profile deso={deso} parentCallback={callbackFunction} loginResponse={loginResponse}/>
     );
   }
+
   if(loginResponse){
   return (
-    <Routes>
-      <Route path="/" element={SpacesComponent()}/>
-      <Route path="/Spaces" element={SpacesComponent()}/>
-      <Route path="/Profile" element={ProfileComponent()}/>
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Spaces/>}/>
+        <Route exact path="/Spaces" element={<Spaces/>}/>
+        <Route
+            path="/Spaces/:id"
+            element={<Space />}
+          />
+        <Route path="/Profile" element={<Profile/>}/>
+      </Routes>
   );
   }else{
     return (
