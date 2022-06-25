@@ -14,6 +14,14 @@ const Spaces = (props) => {
       backgroundColor: '##192026'
   };
 
+  useEffect(() => {
+    console.log('use effect');
+    if(props.loginResponse){
+      setLoginResponse(props.loginResponse);
+      console.log(loginResponse);
+    }
+  }, [loginResponse]);
+
   return(
     <div>
       <button
@@ -23,21 +31,15 @@ const Spaces = (props) => {
         >
           logout
         </button>
-        <button
-          onClick={async () => {
-            const user = await deso.user.getSingleProfile({
-              PublicKeyBase58Check: deso.identity.getUserKey(),
-            });
-            console.log(user);
-            setSampleResponse(JSON.stringify(user, null, 2));
-          }}
-        >
-          get user
-        </button>
-        <div>
-          User info
-          <pre>{sampleResponse}</pre>
-        </div>
+        {loginResponse && 
+            <div>
+                <h2>Profile</h2>
+                <p>{loginResponse.Profile.Username}</p>
+                <p>{loginResponse.Profile.PublicKey}</p>
+                <p>{loginResponse.Profile.Description}</p>
+                <p>{loginResponse.Profile.IsVerified}</p>
+
+            </div>}
     </div>
     );
         

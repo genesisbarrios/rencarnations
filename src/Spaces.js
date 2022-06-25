@@ -26,6 +26,7 @@ const Spaces = (props) => {
   const spacesImgStyle = {
     width: "300px"
   } 
+  
   useEffect(() => {
     console.log('use effect');
     if(props.loginResponse){
