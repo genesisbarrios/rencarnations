@@ -1,0 +1,7 @@
+
+client id: yNNnYXrMnMAQ69Y-io7VCg
+yelp api key: p9Z1TzHoaiuHZwfMkFuxw2aLAEvBy3eAaJeNeQ8cY4pt64J79T60itfsxI607J0RKfd1iI7miLZ7afoIgGPWX-FOYVlBajHHKNJy8YFp-CTcFnbecHwPP1Tyu3q2YnYx
+
+mongo db
+AlphabetAdmin 
+UFS8guMNKMvNgWht
