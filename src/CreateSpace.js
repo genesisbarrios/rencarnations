@@ -10,6 +10,7 @@ import Paper from "@material-ui/core/Paper";
 
 const CreateSpace = (props) => {
     const [firestoreUser, setFireStoreUser] = useState();
+    const [alert, setAlert] = useState();
     let nameRef = useRef();
     let phoneRef = useRef();
     let addressRef = useRef();
@@ -23,16 +24,23 @@ const CreateSpace = (props) => {
         console.log('add space');
         if(firestoreUser){
             const ref = collection(db, "Spaces");
-            const res = await addDoc(ref, {
-                name: Name,
-                phone: Phone,
-                address: Address,
-                website: Website,
-                image: Image,
-                category: Category
-            });
-            console.log(res);
-            navigate("/Spaces");
+            const q = query(ref, where("name", "==", Name));
+            const querySnapshot = await getDocs(q);
+
+            if(querySnapshot.docs.length === 0){    
+                const res = await addDoc(ref, {
+                    name: Name,
+                    phone: Phone,
+                    address: Address,
+                    website: Website,
+                    image: Image,
+                    category: Category
+                });
+                console.log(res);
+                navigate("/Spaces");
+            }else{
+                setAlert('Space already exists');
+            }
         }
     }
 
@@ -53,13 +61,12 @@ const CreateSpace = (props) => {
         let website =  websiteRef.current.value;
         let image =  imageRef.current.value;
         let category =  categoryRef.current.value;
-        console.log(name);
-        console.log(phone);
-        console.log(address);
-        console.log(website);
-        console.log(image);
-        console.log(category);
-        addSpace(name, phone, address, website, image, category);
+
+        if(name && phone && address && website && image && category){
+            addSpace(name, phone, address, website, image, category);
+        }else{
+            setAlert("You must fill out all the fields.");
+        }
     }
     
 
@@ -87,6 +94,8 @@ const CreateSpace = (props) => {
                     <input onClick={(event) => handleSubmit(event)} type="button" value="Submit" id="submitButton"/>
                 </form>
                 </div>
+
+                {alert && <p style={{color:"#2A0000", textAlign:"center"}}>{alert}</p>}
          </Container>
     );
           

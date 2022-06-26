@@ -2,17 +2,27 @@
 import { useState } from "react";
 import { Key, ReactChild, ReactFragment, ReactPortal, useCallback, useEffect, useMemo, useLayoutEffect } from 'react';
 import {db, app} from "./firebase-config";
+import { useNavigate } from "react-router-dom";
 import { getDocs, getDoc, collection, doc, getFirestore, query, limit, where, FieldPath } from "firebase/firestore";
 import './styles.css';
 import Container from 'react-bootstrap/Container';
 import Grid from '@material-ui/core/Grid'
 import Paper from "@material-ui/core/Paper";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  Navigate,
+} from "react-router-dom";
 
 const Profile = (props) => {
     const [loginResponse, setLoginResponse] = useState();
     const [fireStoreUser, setFireStoreUser] = useState();
     const [following, setFollowing] = useState();
- 
+    const [friends, setFriends] = useState();
+    const [pfp, setPFP] = useState();
+    const navigate = useNavigate();
     let deso = props.deso;
 
   const tableStyle = {
@@ -38,13 +48,13 @@ const Profile = (props) => {
 
         const querySnapshot = await getDocs(q);
         if(querySnapshot.docs.length === 0){
-          console.log('empty');
+          //console.log('empty');
         }else{
           var array = [];
           querySnapshot.forEach((doc) => {
               array.push(doc.data().SpacesId);
           });
-          console.log(array);
+          //console.log(array);
           setFollowing(array);
         }
       }
@@ -53,34 +63,80 @@ const Profile = (props) => {
         if(!following){
          checkFollowing();
         }
+        if(!friends){
+          getFriends(fireStoreUser.PublicKey);
+        }
+        if(!pfp){
+          getPFP();
+        }
       }
 
   }, [loginResponse, following, deso]);
 
+  const getPFP = async() => {
+    const request = fireStoreUser.PublicKey;
+    const response = await deso.user.getSingleProfilePicture(request);
+    setPFP(response);
+  }
+
+  const getFriends = async(pubKey) => {
+    console.log('get following');
+    const request = {
+      "PublicKeyBase58Check": pubKey,
+      "NumToFetch": 20
+    };
+     const response = await deso.social.getFollowsStateless(request);
+     let users = response.PublicKeyToProfileEntry;
+      let usrs = Object.values(users);
+     setFriends(usrs);
+     console.log(usrs);
+  }
+
+  const processUnFollow = async(pubKey) => {
+    const request = {
+      "IsUnfollow": true,
+      "FollowedPublicKeyBase58Check": pubKey,
+      "FollowerPublicKeyBase58Check": fireStoreUser.PublicKey
+    };
+     const response = await deso.social.createFollowTxnStateless(request);
+     console.log(response);
+     navigate("/");
+  }
+
+
   return(
     <div>
-        {loginResponse && 
+        {loginResponse && pfp &&
             <Container id="ProfileContainer">
-                <h2 style={{marginTop: 0}}>Profile</h2>
-                <p>Username: {loginResponse.Profile.Username}</p>
+                <h1 style={{marginTop: 0}}>Profile</h1>
+                <img src={pfp}></img>
+                <p>{loginResponse.Profile.Username}</p>
                 <p>PublicKey: {loginResponse.Profile.PublicKeyBase58Check}</p>
                 <p>Description: {loginResponse.Profile.Description}</p>
                 <p>Verified: {JSON.stringify(loginResponse.Profile.IsVerified)}</p>
 
-               { following && <div>
-                    <h2>Following</h2>
+               { following && <div style={{marginTop: "5%"}}>
+                    <h2 >Following</h2>
                     {following.map((doc) => (
-                        <p>{doc}</p>
+                        <p> <Link to={`/Spaces/${doc}`} key={doc} firestoreUser={fireStoreUser} className="spaceslinks">{doc}</Link></p>
                     ))}
                 </div>}
 
-                <div>
+                { friends && <div style={{marginTop: "5%"}}>
                     <h2>Friends</h2>
-                </div>
+                    {friends.map((doc) => (
+                        <p>{doc.Username + " " +doc.PublicKeyBase58Check}  
+                          <button onClick={async () => {
+                            processUnFollow(doc.PublicKeyBase58Check);
+                          }} id="unfollowButton">Unfollow</button>
+                        </p> 
+                    ))}
+                </div>}
 
                 <button
                 onClick={() => {
                   deso.identity.logout(deso.identity.getUserKey());
+                  navigate("/");
                 }}
               id="logoutButton">
                 Logout

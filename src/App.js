@@ -56,6 +56,12 @@ useEffect(() => {
     );
   }
 
+  const LoginComponent = () => {
+    return (
+     <Login deso={deso} fireStoreCallBack={fireStoreCallBackFunction} desoCallBack={desoCallBackFunction} loginResponse={loginResponse} fireStoreUser={fireStoreUser}/>
+    );
+  }
+
   if(loginResponse && fireStoreUser){
   return (
       <Routes>
