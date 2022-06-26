@@ -169,6 +169,10 @@
     margin:0 38%;
   }
 
-  #ProfileContainer, #SpacesContainer{
+  #ProfileContainer, #SpacesContainer, #CreateSpacesContainer{
     padding-top: 20px;
+  }
+
+  h2{
+    margin-top: 0;
   }
