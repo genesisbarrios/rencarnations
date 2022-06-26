@@ -76,7 +76,7 @@
     touch-action: manipulation;
   }
 
-  #followButton, #submitButton{
+  #followButton, #submitButton, #addFriendButton{
       background-color: #c2fbd7;
       border-radius: 100px;
       box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
@@ -95,7 +95,7 @@
       touch-action: manipulation;
   }
 
-  #followButton:hover, #submitButton:hover {
+  #followButton:hover, #submitButton:hover, #addFriendButton:hover {
     box-shadow: rgba(2, 32, 12, 0.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
     transform: scale(1.05) rotate(-1deg);
   }

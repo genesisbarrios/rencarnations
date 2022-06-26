@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState, Fragment, useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {db, app} from "./firebase-config";
-import { getDocs, addDoc, collection, doc, getFirestore, query, limit, where, FieldPath, deleteDoc } from "firebase/firestore";
+import { getDocs, addDoc, collection, doc, getFirestore, query, limit, where, FieldPath, deleteDoc, getDoc } from "firebase/firestore";
 import Container from 'react-bootstrap/Container';
 import {
   BrowserRouter as Router,
@@ -67,18 +67,36 @@ const Space = (props) => {
       console.log('get followers');
 
       const ref = collection(db, "Following");
-      const q = query(ref, where("SpacesId", "==", id));// limit(1),
+      const q = query(ref, where("SpacesId", "==", id));//limit(1), 
 
       const querySnapshot = await getDocs(q);
 
       if(querySnapshot.docs.length === 0){
         //console.log('empty')
       }else{
-        let followersarray = [];
+
+        let userIdArray = [];
         querySnapshot.forEach((doc) => {
-            followersarray.push(doc.data().UserId);
+          //console.log(doc.data())
+            userIdArray.push(doc.data().UserId);
         });
+
+        let followersarray = [];
+        const usersref = collection(db, "Users");
+
+        if(userIdArray.length > 1){
+        userIdArray.forEach(async(userDoc) => {
+          console.log(userDoc)
+          const userq = query(usersref,where("id", "==", userDoc));
+            const userquerySnapshot = await getDocs(usersref, limit(1), userDoc);
+
+            userquerySnapshot.forEach((userdoc) => {
+              console.log(userdoc.data())
+              followersarray.push(userdoc.data());
+            });
+        })
         setFollowers(followersarray);
+      }
       }
     }
 
@@ -104,6 +122,10 @@ const Space = (props) => {
         console.log(res);
 
         setFollowing(true);
+  }
+
+  const addFriend = () => {
+
   }
 
   const processUnFollow = async() => {
@@ -161,7 +183,7 @@ const Space = (props) => {
         { followers && <div>
           <h3>Followers</h3>
             {followers.map((doc) => (
-                <p>{doc}</p>
+                <p>{doc.PublicKey} <button onClick={addFriend()} id="addFriendButton">Add Friend</button></p>
             ))}
         </div>
         }
