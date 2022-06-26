@@ -2,10 +2,13 @@ import { useState } from "react";
 import { Key, ReactChild, ReactFragment, ReactPortal, useCallback, useEffect, useMemo, useLayoutEffect } from 'react';
 import {db, app} from "./firebase-config";
 import { getDocs,getDoc, collection, deleteDoc, doc, getFirestore, query, where, addDoc } from "firebase/firestore";
+import './styles.css';
 
 const Login = (props) => {
     let deso = props.deso;
-    let callbackFunction = props.parentCallback;
+    let desoCallBackFunction = props.desoCallBack;
+    let fireStoreCallBackFunction = props.fireStoreCallBack;
+
     const [desoUser, setDesoUser] = useState();
     const [firestoreUser, setFireStoreUser] = useState();
 
@@ -20,7 +23,7 @@ const Login = (props) => {
             const querySnapshot = await getDocs(q);
             if(querySnapshot.docs.length === 0){
                 console.log('Welcome to Alphabet Spaces. Adding you to our database..');
-                //const docResp = await setDoc(ref, {});
+
                 const res = await addDoc(ref, {
                     PublicKey: desoUser.Profile.PublicKeyBase58Check,
                     description: desoUser.Profile.Description,
@@ -29,9 +32,11 @@ const Login = (props) => {
                 });
                 //console.log(res);
             }else{
+                //set firestore user
                 querySnapshot.forEach((doc) => {
-                    console.log("doc:", doc.id, " => ", doc.data());
-                    setFireStoreUser( doc.data());
+                    //console.log("doc:", doc.id, " => ", doc.data());
+                    setFireStoreUser( {id:doc.id, ...doc.data()});
+                    fireStoreCallBackFunction({id:doc.id, ...doc.data()});
                 });
             }
         }
@@ -39,6 +44,10 @@ const Login = (props) => {
 
     useEffect(() => {
         checkFirestore();
+        if(firestoreUser){
+            console.log('user effect check firestore user')
+            console.log(firestoreUser);
+        }
     }, [firestoreUser, desoUser]);
 
     const tableStyle = {
@@ -46,23 +55,25 @@ const Login = (props) => {
     };
 
     return (
-        <button
-            onClick={async () => {
-                const userLogin = await deso.identity.login();
+        <div id="LoginScreen">
+            <button id="loginButton"
+                onClick={async () => {
+                    const userLogin = await deso.identity.login();
 
-                const user = await deso.user.getSingleProfile({
-                    PublicKeyBase58Check: deso.identity.getUserKey(),
-                  });
-                console.log(user);
-                const desoUserResp = JSON.parse(JSON.stringify(user, null, 2));
-                setDesoUser(desoUserResp);
-
-                callbackFunction(desoUserResp);
-                checkFirestore();
-            }}
-            >
-            login
-        </button>
+                    const user = await deso.user.getSingleProfile({
+                        PublicKeyBase58Check: deso.identity.getUserKey(),
+                    });
+                    //console.log(user);
+                    const desoUserResp = JSON.parse(JSON.stringify(user, null, 2));
+                    console.log(desoUserResp);
+                    setDesoUser(desoUserResp);//set deso user info
+                    desoCallBackFunction(desoUserResp);
+                    checkFirestore();
+                }}
+                >
+                Login
+            </button>
+        </div>
     );
           
 };
