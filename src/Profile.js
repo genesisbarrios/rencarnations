@@ -110,7 +110,7 @@ const Profile = (props) => {
             <Container id="ProfileContainer">
                 <h1 style={{marginTop: 0}}>Profile</h1>
                 <img src={pfp}></img>
-                <p>{loginResponse.Profile.Username}</p>
+                <h4>{loginResponse.Profile.Username}</h4>
                 <p>PublicKey: {loginResponse.Profile.PublicKeyBase58Check}</p>
                 <p>Description: {loginResponse.Profile.Description}</p>
                 <p>Verified: {JSON.stringify(loginResponse.Profile.IsVerified)}</p>

@@ -28,7 +28,8 @@ const Spaces = (props) => {
 
   const spacesImgStyle = {
     maxWidth: "150px",
-    marginLeft:"10px"
+    marginLeft:"10px",
+    borderRadius: "15px"
   } 
   
   useEffect(() => {
@@ -60,8 +61,9 @@ const Spaces = (props) => {
   const stylez = {
     height:"200px",
     maxHeight:"300px",
-    backgroundColor: "#073B4C",
-    border: "1px solid black",
+    backgroundColor: "#ECEFF1",
+    border: "1px solid grey",
+    boxShadow: "-0.2rem 0.2rem 0 rgba(29, 30, 28, 0.26)",
     borderRadius: "5px",
   };
 
@@ -69,26 +71,21 @@ const Spaces = (props) => {
     marginTop:"5%"
   };
 
-  const LinkStyle = {
-    textDecoration: "none",
-    color: "white"
-  };
-
   return(
     <Container style={SpacesContainerStyles} id="SpacesContainer">
-      <h2 style={{marginTop:0}}>Spaces</h2>
+      <h2 style={{marginTop:0}}>SPACES</h2>
         {spaces && (
           <Grid container spacing={2}>
             {spaces.map((doc) => (
               <Grid item xs={6}>
                 <Paper style={stylez}>
-                  <Link to={`/Spaces/${doc.id}`} key={doc.id} firestoreUser={fireStoreUser} style={LinkStyle} className="spaceslinks">
+                  <Link to={`/Spaces/${doc.id}`} key={doc.id} firestoreUser={fireStoreUser} className="spaceslinks">
                       <Grid container spacing={2} style={GridItemStyles}>
                         <Grid item xs={6}>
                             <img src={JSON.parse(JSON.stringify(doc.image))} style={spacesImgStyle}/>
                           </Grid>
                          <Grid item xs={6}>
-                             <p>{JSON.parse(JSON.stringify(doc.name))} </p>
+                             <h4>{JSON.parse(JSON.stringify(doc.name))} </h4>
                              <p>{JSON.parse(JSON.stringify(doc.address))} </p>
                         </Grid>
                       </Grid>

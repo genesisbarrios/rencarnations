@@ -1,17 +1,24 @@
 body {
   margin: 0;
   padding:0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Heebo', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #f0efeb;
   color:black;
 }
 
+h1, h2, h3, h4, h5, h6{
+  font-weight: 800;
+  text-shadow: -0.1rem 0.1rem 0 rgba(29, 30, 28, 0.26)
+}
+
+p{
+  font-weight: 300;
+}
+
 #nav{
-  background-color: #073b4c;
+  background-color: #23272A;
 }
 
 a{
@@ -24,7 +31,7 @@ code {
 }
 
 footer{
-  background-color: #073B4C;
+  background-color: #23272A;
   color:white;
   text-align: center;
   padding:10px;
