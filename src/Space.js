@@ -60,11 +60,9 @@ const Space = (props) => {
         "PublicKeyBase58Check": fireStoreUser.PublicKey,
         "IsFollowingPublicKeyBase58Check": pubKey
       };
-       const response = await deso.social.isFollowingPublicKey(request);
-       let isfoll = response.data().IsFollowing;
-      let foll = Object.values(isfoll);
-      console.log(foll);
-      return foll;
+      const response = await deso.social.isFollowingPublicKey(request);
+      //console.log(response.data)
+      return response.data;
     }
 
     const getFollowers = async () => {
@@ -91,8 +89,9 @@ const Space = (props) => {
         userIdArray.forEach(async(userDoc) => {
             const userquerySnapshot = await getDocs(usersref, limit(1), userDoc);
             
-            userquerySnapshot.forEach((userdoc) => {
-              let isFollow = isFollowing(userdoc.data().PublicKey);
+            userquerySnapshot.forEach(async(userdoc) => {
+              let isFollow = await isFollowing(userdoc.data().PublicKey);
+             // console.log(isFollow);
               followersarray.push({isFollowing: isFollow, ...userdoc.data()});
             });
         })
@@ -150,6 +149,17 @@ const Space = (props) => {
      navigate("/Profile");
   }
 
+const unFriend = async(pubKey) => {
+  const request = {
+    "IsUnfollow": true,
+    "FollowedPublicKeyBase58Check": pubKey,
+    "FollowerPublicKeyBase58Check": fireStoreUser.PublicKey
+  };
+   const response = await deso.social.createFollowTxnStateless(request);
+   console.log(response);
+   navigate("/Profile");
+}
+
   const processUnFollow = async() => {
     console.log('Removing Follow');
 
@@ -202,7 +212,8 @@ const Space = (props) => {
           <h3>Followers</h3>
             {followers.map((doc) => (
                 <p style={{marginBottom: 0}}>{doc.username} 
-                  <button onClick={ () => { addFriend(doc.PublicKey);}} id="addFriendButton">Add Friend</button>
+                {!doc.isFollowing.IsFollowing &&  <button onClick={ () => { addFriend(doc.PublicKey);}} id="addFriendButton">Add Friend</button>}
+                {doc.isFollowing.IsFollowing &&  <button onClick={ () => { unFriend(doc.PublicKey);}} id="unFriendButton">Unfriend</button>}
                 </p>
             ))}
         </div>
