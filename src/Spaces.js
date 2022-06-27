@@ -65,6 +65,7 @@ const Spaces = (props) => {
     border: "1px solid grey",
     boxShadow: "-0.2rem 0.2rem 0 rgba(29, 30, 28, 0.26)",
     borderRadius: "5px",
+    paddingLeft:"10px"
   };
 
   const GridItemStyles = {
@@ -77,14 +78,14 @@ const Spaces = (props) => {
         {spaces && (
           <Grid container spacing={2}>
             {spaces.map((doc) => (
-              <Grid item xs={6}>
+              <Grid item xs={12} md={6}>
                 <Paper style={stylez}>
-                  <Link to={`/Spaces/${doc.id}`} key={doc.id} firestoreUser={fireStoreUser} className="spaceslinks">
+                  <Link to={`/Spaces/${doc.id}`} key={doc.id} firestoreUser={fireStoreUser} className="spacescardslinks">
                       <Grid container spacing={2} style={GridItemStyles}>
-                        <Grid item xs={6}>
-                            <img src={JSON.parse(JSON.stringify(doc.image))} style={spacesImgStyle}/>
+                        <Grid item xs={12} md={6}>
+                            <img src={JSON.parse(JSON.stringify(doc.image))} style={spacesImgStyle} className="spacesImg"/>
                           </Grid>
-                         <Grid item xs={6}>
+                         <Grid item xs={12} md={6}>
                              <h4>{JSON.parse(JSON.stringify(doc.name))} </h4>
                              <p>{JSON.parse(JSON.stringify(doc.address))} </p>
                         </Grid>

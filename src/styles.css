@@ -8,6 +8,32 @@
     padding:0;
 }
 
+
+
+@media only screen and (max-width: 1000px) {
+  #LoginScreen {
+    background-size: auto;
+    background-attachment: fixed;
+  }
+
+  #loginButton{
+    margin: 0 45%;
+    margin-top:60%;
+  }
+
+  body{
+    font-size: 0.7em;
+  }
+
+  .spacesImg{
+    max-width: 100px!important;
+  }
+
+  h4{
+    margin-top:0;
+  }
+}
+
 #loginButton{
     margin: 0 50%;
     margin-top:40%;
@@ -36,8 +62,7 @@
   }
 
   #root{
-    background: rgb(162,121,139);
-    background: radial-gradient(circle, rgba(162,121,139,1) 0%, rgba(97,122,152,1) 100%);
+    background: #0b0c0d;
     margin:0;
     padding:0%;
   }
@@ -58,13 +83,13 @@
   
   #CreateSpaceButton{
     margin-top:20px;
+    margin-bottom: 20px;
     background-color: #e7fbc2;
     border-radius: 100px;
-    box-shadow: #f0efeb 0 -25px 18px -14px inset,rgba(202, 214, 207, 0.15) 0 1px 2px,rgba(251, 255, 217, 0.15) 0 2px 4px,rgba(240, 251, 244, 0.15) 0 4px 8px,rgba(251, 214, 170, 0.15) 0 8px 16px,rgba(255, 192, 151, 0.15) 0 16px 32px;
+    box-shadow: #f0ebeb 0 -25px 18px -14px inset,rgba(202, 214, 207, 0.15) 0 1px 2px,rgba(251, 255, 217, 0.15) 0 2px 4px,rgba(240, 251, 244, 0.15) 0 4px 8px,rgba(251, 214, 170, 0.15) 0 8px 16px,rgba(255, 192, 151, 0.15) 0 16px 32px;
     color: rgb(1, 50, 4);
     cursor: pointer;
     display: inline-block;
-    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
     padding: 7px 20px;
     text-align: center;
     text-decoration: none;
@@ -76,15 +101,14 @@
     touch-action: manipulation;
   }
 
-  #followButton, #submitButton, #addFriendButton{
+ .followButton, #submitButton,.addFriendButton{
     margin-bottom:0;
       background-color: #c2fbd7;
       border-radius: 100px;
-      box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+      box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px!important;
       color: green;
       cursor: pointer;
-      display: inline-block;
-      font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+      display: inline-block; 
       padding: 7px 20px;
       text-align: center;
       text-decoration: none;
@@ -95,16 +119,16 @@
       -webkit-user-select: none;
       touch-action: manipulation;
   }
-  #addFriendButton,  #unFriendButton{
+  .addFriendButton,  .unFriendButton{
     margin-left:10px;
   }
 
-  #followButton:hover, #submitButton:hover, #addFriendButton:hover {
+  .followButton:hover, #submitButton:hover, .addFriendButton:hover {
     box-shadow: rgba(2, 32, 12, 0.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
     transform: scale(1.05) rotate(-1deg);
   }
 
-  #unfollowButton, #logoutButton, #unFriendButton{
+  .unfollowButton, #logoutButton, .unFriendButton{
     margin-top:2%;
       background-color: #ef476f;
       border-radius: 100px;
@@ -124,9 +148,16 @@
       touch-action: manipulation;
   }
 
-  #unfollowButton:hover, #logoutButton:hover,  #unFriendButton:hover {
+  .unfollowButton:hover, #logoutButton:hover,  .unFriendButton:hover {
     box-shadow: rgba(84, 3, 25, 0.35) 0 -25px 18px -14px inset,rgba(63, 2, 33, 0.25) 0 1px 2px,rgba(68, 1, 59, 0.25) 0 2px 4px,rgba(225, 30, 53, 0.25) 0 4px 8px,rgba(102, 25, 2, 0.25) 0 8px 16px,rgba(80, 3, 131, 0.25) 0 16px 32px;
     transform: scale(1.05) rotate(-1deg);
+  }
+
+  .addFriendButton,.unFriendButton{
+    padding: 5px;
+    font-size: 0.6em;
+    font-weight: 800;
+    margin-top:3%;
   }
 
 #logoutButton{
@@ -134,14 +165,23 @@
   margin-bottom:3%;
 }
 
-  .spaceslinks{
+  .spacescardslinks{
     text-decoration: none;
     color:black;
   }
 
-  .spaceslinks:hover{
+  .spaceslinks{
     text-decoration: none;
-    color:#3a96b5;
+    color:white;
+  }
+
+  .spaceslinks:hover, .spacescardslinks h4:hover{
+    text-decoration: none;
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
 
   #SpaceForm{
@@ -191,4 +231,19 @@
 
   h2{
     margin-top: 0;
+  }
+
+  .usernameP{
+    font-weight: 400;
+  
+  }
+
+  .fa-wallet{
+    color:white;
+    margin-right:5px;
+  }
+
+  .fa-check-circle{
+    color:white;
+    margin-left:5px;
   }

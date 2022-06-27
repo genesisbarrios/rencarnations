@@ -12,6 +12,10 @@ import {
   useParams, 
 } from "react-router-dom";
 import './styles.css';
+import Grid from '@material-ui/core/Grid'
+import Paper from "@material-ui/core/Paper";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAddressBook, faPhone, faGlobe } from '@fortawesome/free-solid-svg-icons'
 
 const Space = (props) => {
   let deso = props.deso;
@@ -189,9 +193,9 @@ const unFriend = async(pubKey) => {
           <div>
                 <h2 style={{marginTop:0}}> {space.name} </h2>
                 <div><img src={space.image} style={{width: "200px"}}/></div>
-                <p>Address: {space.address}</p>
-                <p>Phone: {space.phone}</p>
-                <p><a href={space.website} className="spaceslinks">Website</a></p>
+                <p><FontAwesomeIcon icon={faAddressBook} /> {space.address}</p>
+                <p><FontAwesomeIcon icon={faPhone} /> {space.phone}</p>
+                <p><a href={space.website} className="spaceslinks"><FontAwesomeIcon icon={faGlobe} /> Website</a></p>
                 <p>Category: {space.category}</p>
           </div>
         )}
@@ -199,23 +203,30 @@ const unFriend = async(pubKey) => {
        {!following && (
                 <button onClick={async () => {
                   processFollow();
-                }} id="followButton">Follow</button>
+                }} className="followButton">Follow</button>
         )}
 
         {following && (
              <button onClick={async () => {
               processUnFollow();
-            }} id="unfollowButton">Unfollow</button>
+            }} className="unfollowButton">Unfollow</button>
         )}
 
         { followers && <div>
           <h3>Followers</h3>
+          <Grid container spacing={2}>
             {followers.map((doc) => (
-                <p style={{marginBottom: 0}}>{doc.username} 
-                {!doc.isFollowing.IsFollowing &&  <button onClick={ () => { addFriend(doc.PublicKey);}} id="addFriendButton">Add Friend</button>}
-                {doc.isFollowing.IsFollowing &&  <button onClick={ () => { unFriend(doc.PublicKey);}} id="unFriendButton">Unfriend</button>}
-                </p>
+              <>
+                <Grid item xs={4}>
+                  <p style={{marginBottom: 0}}>{doc.username} </p>
+                </Grid>
+                  <Grid item xs={8}>
+                  {!doc.isFollowing.IsFollowing &&  <button onClick={ () => { addFriend(doc.PublicKey);}} className="addFriendButton">Add Friend</button>}
+                  {doc.isFollowing.IsFollowing &&  <button onClick={ () => { unFriend(doc.PublicKey);}} className="unFriendButton">Unfriend</button>}
+                </Grid>
+              </>
             ))}
+            </Grid>
         </div>
         }
 

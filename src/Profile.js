@@ -15,6 +15,8 @@ import {
   Link,
   Navigate,
 } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle, faWallet } from '@fortawesome/free-solid-svg-icons'
 
 const Profile = (props) => {
     const [loginResponse, setLoginResponse] = useState();
@@ -110,10 +112,9 @@ const Profile = (props) => {
             <Container id="ProfileContainer">
                 <h1 style={{marginTop: 0}}>Profile</h1>
                 <img src={pfp}></img>
-                <h4>{loginResponse.Profile.Username}</h4>
-                <p>PublicKey: {loginResponse.Profile.PublicKeyBase58Check}</p>
-                <p>Description: {loginResponse.Profile.Description}</p>
-                <p>Verified: {JSON.stringify(loginResponse.Profile.IsVerified)}</p>
+                <h4>{loginResponse.Profile.Username} {Boolean(loginResponse.Profile.IsVerified) && <FontAwesomeIcon icon={faCheckCircle} />}</h4>
+                <p><FontAwesomeIcon icon={faWallet} />{loginResponse.Profile.PublicKeyBase58Check}</p>
+                {loginResponse.Profile.Description &&  <p> {loginResponse.Profile.Description} </p>}
 
                { following && <div style={{marginTop: "5%"}}>
                     <h2 >Following</h2>
@@ -124,13 +125,20 @@ const Profile = (props) => {
 
                 { friends && <div style={{marginTop: "5%"}}>
                     <h2>Friends</h2>
+                    <Grid container spacing={2}>
                     {friends.map((doc) => (
-                        <p>{doc.Username + " " +doc.PublicKeyBase58Check}  
-                          <button onClick={async () => {
-                            processUnFollow(doc.PublicKeyBase58Check);
-                          }} id="unfollowButton">Unfollow</button>
-                        </p> 
+                      <>
+                        <Grid item xs={4}>
+                         <p className="usernameP">{doc.Username.substring(0,25)}</p>
+                        </Grid>
+                         <Grid item xs={8}>
+                        <button onClick={async () => {
+                          processUnFollow(doc.PublicKeyBase58Check);
+                        }} className="unFriendButton">Unfollow</button>
+                        </Grid>
+                      </>
                     ))}
+                    </Grid>
                 </div>}
 
                 <button
