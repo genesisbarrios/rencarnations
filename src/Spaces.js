@@ -63,7 +63,7 @@ const Spaces = (props) => {
     maxHeight:"300px",
     backgroundColor: "#ECEFF1",
     border: "1px solid grey",
-    boxShadow: "-0.2rem 0.2rem 0 rgba(29, 30, 28, 0.26)",
+    boxShadow: "-0.1rem 0.1rem 0 rgb(217, 219, 219, 0.4)",
     borderRadius: "5px",
     paddingLeft:"10px"
   };
@@ -78,7 +78,7 @@ const Spaces = (props) => {
         {spaces && (
           <Grid container spacing={2}>
             {spaces.map((doc) => (
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={6} >
                 <Paper style={stylez}>
                   <Link to={`/Spaces/${doc.id}`} key={doc.id} firestoreUser={fireStoreUser} className="spacescardslinks">
                       <Grid container spacing={2} style={GridItemStyles}>

@@ -22,6 +22,7 @@ useEffect(() => {
 }, [loginResponse, fireStoreUser]);
 
   const desoCallBackFunction = (desoResponse) => {
+    console.log('callback function')
     setLoginResponse(desoResponse);
     console.log(desoResponse);
   }
@@ -76,7 +77,7 @@ useEffect(() => {
   );
   }else{
     return (
-      <Login deso={deso} fireStoreCallBack={fireStoreCallBackFunction} desoCallBack={desoCallBackFunction}></Login>
+     <LoginComponent></LoginComponent>
     )
   }
 };
