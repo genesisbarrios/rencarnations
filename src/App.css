@@ -1,5 +1,31 @@
 .App {
   text-align: center;
+  font-family: 'Garamond';
+}
+
+.headings{
+  font-family:'RochesterT';
+  color:white;
+  font-size: 1.50em;
+}
+
+.titles{
+  color:"#cec09e"
+}
+
+@font-face {
+  font-family: 'RochesterT';
+  src: local('MyFont'), url(./RochesterTwee.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+
+.links{
+  text-align:"center";
+  margin-top:"2%"; 
+  text-decoration:"none"; 
+  display:"block";
 }
 
 .App-logo {
@@ -14,7 +40,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #050505;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +50,16 @@
   color: white;
 }
 
+
+body {
+  min-height: 100vh !important;
+}
+
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body{
+  background-color: #030303;
 }
+

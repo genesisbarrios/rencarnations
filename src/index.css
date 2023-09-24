@@ -1,11 +1,12 @@
 body {
   margin: 0;
   padding:0;
+  min-height: 100vh !important;
   font-family: 'Heebo', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f0efeb;
-  color:black;
+  background: #050505;
+  color:rgb(255, 255, 255);
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -17,22 +18,15 @@ p{
   font-weight: 300;
 }
 
-#nav{
-  background-color: #23272A;
-}
-
 a{
-  color: #06d6a0;
+  color: #cec09e;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 
 footer{
-  background-color: #23272A;
+  background-color: #050505;
   color:white;
   text-align: center;
   padding:10px;
+  margin-bottom:0;
 }

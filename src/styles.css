@@ -1,25 +1,22 @@
-#LoginScreen{
-    background-image: url("bg.png");
-    width:100%;
-    height:100vh;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    margin:0;
-    padding:0;
+
+body{
+  background-color: #090c0e !important;
 }
 
 
+.links{
+  text-align:"center";
+  margin-top:"2%"; 
+  text-decoration:"none"; 
+  display:"block";
+}
+
+.page-footer{
+  margin-bottom:0;
+}
 
 @media only screen and (max-width: 1000px) {
-  #LoginScreen {
-    background-size: auto;
-    background-attachment: fixed;
-  }
-
-  #loginButton{
-    margin: 0 45%;
-    margin-top:60%;
-  }
+ 
 
   body{
     font-size: 0.7em;
@@ -29,221 +26,8 @@
     max-width: 100px!important;
   }
 
+
   h4{
     margin-top:0;
   }
 }
-
-#loginButton{
-    margin: 0 50%;
-    margin-top:40%;
-
-      background-color: #c2fbd7;
-      border-radius: 100px;
-      box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
-      color: green;
-      cursor: pointer;
-      display: inline-block;
-      font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-      padding: 7px 20px;
-      text-align: center;
-      text-decoration: none;
-      transition: all 250ms;
-      border: 0;
-      font-size: 16px;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-}
-
-#loginButton:hover {
-    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-  }
-
-  #root{
-    background: #0b0c0d;
-    margin:0;
-    padding:0%;
-  }
-
-  #SpacesContainer, #ProfileContainer,#CreateSpacesContainer{
-    color:white;
-    min-height:90vh;
-  }
-
-  #CreateSpacesContainer h2{
-   text-align:center;
-  }
-
-  #CreateSpaceButton:hover {
-    box-shadow: rgba(239, 255, 245, 0.35) 0 -25px 18px -14px inset,rgba(255, 248, 150, 0.25) 0 1px 2px,rgba(255, 253, 198, 0.25) 0 2px 4px,rgba(251, 255, 210, 0.25) 0 4px 8px,rgba(255, 218, 173, 0.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-  }
-  
-  #CreateSpaceButton{
-    margin-top:20px;
-    margin-bottom: 20px;
-    background-color: #e7fbc2;
-    border-radius: 100px;
-    box-shadow: #f0ebeb 0 -25px 18px -14px inset,rgba(202, 214, 207, 0.15) 0 1px 2px,rgba(251, 255, 217, 0.15) 0 2px 4px,rgba(240, 251, 244, 0.15) 0 4px 8px,rgba(251, 214, 170, 0.15) 0 8px 16px,rgba(255, 192, 151, 0.15) 0 16px 32px;
-    color: rgb(1, 50, 4);
-    cursor: pointer;
-    display: inline-block;
-    padding: 7px 20px;
-    text-align: center;
-    text-decoration: none;
-    transition: all 250ms;
-    border: 0;
-    font-size: 16px;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-
- .followButton, #submitButton,.addFriendButton{
-    margin-bottom:0;
-      background-color: #c2fbd7;
-      border-radius: 100px;
-      box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px!important;
-      color: green;
-      cursor: pointer;
-      display: inline-block; 
-      padding: 7px 20px;
-      text-align: center;
-      text-decoration: none;
-      transition: all 250ms;
-      border: 0;
-      font-size: 16px;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-  }
-  .addFriendButton,  .unFriendButton{
-    margin-left:10px;
-  }
-
-  .followButton:hover, #submitButton:hover, .addFriendButton:hover {
-    box-shadow: rgba(2, 32, 12, 0.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-  }
-
-  .unfollowButton, #logoutButton, .unFriendButton{
-    margin-top:2%;
-      background-color: #ef476f;
-      border-radius: 100px;
-      box-shadow: rgba(156, 34, 75, 0.2) 0 -25px 18px -14px inset,rgba(195, 31, 167, 0.15) 0 1px 2px,rgba(154, 3, 38, 0.15) 0 2px 4px,rgba(184, 5, 29, 0.15) 0 4px 8px,rgba(146, 4, 143, 0.15) 0 8px 16px,rgba(108, 6, 68, 0.15) 0 16px 32px;
-      color: rgb(128, 0, 0);
-      cursor: pointer;
-      display: inline-block;
-      font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-      padding: 7px 20px;
-      text-align: center;
-      text-decoration: none;
-      transition: all 250ms;
-      border: 0;
-      font-size: 16px;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-  }
-
-  .unfollowButton:hover, #logoutButton:hover,  .unFriendButton:hover {
-    box-shadow: rgba(84, 3, 25, 0.35) 0 -25px 18px -14px inset,rgba(63, 2, 33, 0.25) 0 1px 2px,rgba(68, 1, 59, 0.25) 0 2px 4px,rgba(225, 30, 53, 0.25) 0 4px 8px,rgba(102, 25, 2, 0.25) 0 8px 16px,rgba(80, 3, 131, 0.25) 0 16px 32px;
-    transform: scale(1.05) rotate(-1deg);
-  }
-
-  .addFriendButton,.unFriendButton{
-    padding: 5px;
-    font-size: 0.6em;
-    font-weight: 800;
-    margin-top:3%;
-  }
-
-#logoutButton{
-  margin-top:5%;
-  margin-bottom:3%;
-}
-
-  .spacescardslinks{
-    text-decoration: none;
-    color:black;
-  }
-
-  .spaceslinks{
-    text-decoration: none;
-    color:white;
-  }
-
-  .spaceslinks:hover, .spacescardslinks h4:hover{
-    text-decoration: none;
-    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
-    color:transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-
-  #SpaceForm{
-    width:80%;
-    min-height:80%;
-    margin: 0 auto;
-  }
-
-  #formCard{
-    border: 1px solid black;
-    max-width: 980px;
-    background-color: #fff;
-    border-radius:15px;
-    margin: 0 auto;
-    box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);;
-    color:black;
-    padding: 20px;
-  }
-
-  #SpaceForm input, #SpaceForm select{
-    border: 2px solid rgba(0, 0, 0, 0.6);
-    background-image:none;
-    background-color: #dadad3;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    padding: 5px;
-    display:inline-block;
-    width:100%;
-    margin-bottom: 10px;
-  }
-
-  #submitButton{
-    width:25%!important;
-    margin:0 38%;
-  }
-
-  #ProfileContainer, #SpacesContainer, #CreateSpacesContainer{
-    padding-top: 20px;
-  }
-
-  #ProfileContainer{
-    width:60%;
-    margin: 0 auto;
-    
-  }
-
-  h2{
-    margin-top: 0;
-  }
-
-  .usernameP{
-    font-weight: 400;
-  
-  }
-
-  .fa-wallet{
-    color:white;
-    margin-right:5px;
-  }
-
-  .fa-check-circle{
-    color:white;
-    margin-left:5px;
-  }
