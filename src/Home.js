@@ -33,33 +33,29 @@ const Home = (props) => {
       <Grid container spacing={2}> 
         <Grid item sm={2}> </Grid >
         <Grid item sm={8}>
-          <p style={{textAlign:"center"}}><a href="/StayInTouch" className="links" style={{textDecoration:"none", color:"#e4ddf3"}}>stay in touch</a>  </p>
+          <p style={{textAlign:"center", fontFamily:"Helvetica"}}><a href="/StayInTouch" className="links" style={{textDecoration:"none", color:"#e4ddf3"}}>stay in touch</a>  </p>
           
-          <Grid container spacing={2} style={{justifyContent:"center", margin:"10% 0"}}>
-            <Grid item>
-              <img src="ren1.png" width="250px"></img>
-            </Grid>
-            <Grid item>
-              <img src="ren2.png" width="250px"></img>
-            </Grid>
-            <Grid item>
-              <img src="ren3.png" width="250px"></img>
-            </Grid>
-          </Grid>
+          <div style={{textAlign:"center", fontFamily:"Helvetica", marginBottom:"10px"}}>
+              <img src="ren1.png" width="500px"></img>
+          </div>
 
-          <Grid container spacing={2} style={{justifyContent:"center", margin:"10% 0"}}>
-            <Grid item>
-              <img src="ren4.png" width="250px"></img>
-            </Grid>
-            <Grid item>
-              <img src="ren5.png" width="250px"></img>
-            </Grid>
-            <Grid item>
-              <img src="ren6.png" width="250px"></img>
-            </Grid>
-          </Grid>
+          <div style={{textAlign:"center", fontFamily:"Helvetica", marginBottom:"10px"}}>
+            <img src="ren2.png" width="500px"></img>
+          </div>
+            <div style={{textAlign:"center", fontFamily:"Helvetica", marginBottom:"10px"}}>
+              <img src="ren3.png" width="500px"></img>
+            </div>
+            <div style={{textAlign:"center", fontFamily:"Helvetica", marginBottom:"10px"}}>
+              <img src="ren4.png" width="500px"></img>
+            </div>
+            <div style={{textAlign:"center", fontFamily:"Helvetica", marginBottom:"10px"}}>
+              <img src="ren5.png" width="500px"></img>
+            </div>
+            <div style={{textAlign:"center", fontFamily:"Helvetica", marginBottom:"10px"}}>
+              <img src="ren6.png" width="500px"></img>
+            </div>
 
-          <p style={{textAlign:"center"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e"}}>contact</a>  </p>
+          <p style={{textAlign:"center", fontFamily:"Helvetica"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e"}}>contact</a>  </p>
         </Grid>
         <Grid item sm={2}> </Grid>
       </Grid>

@@ -4,7 +4,6 @@ import { createTheme, ThemeProvider } from "@material-ui/core";
 import Listen from "./Listen";
 import Contact from './Contact';
 import Diary from './Diary';
-import Links from './Links';
 import Watch from './Watch';
 import TakeAction from "./TakeAction";
 import ThankYou from './ThankYou';
@@ -55,14 +54,6 @@ useEffect(() => {
     );
   }
 
-  const LinksComponent = () => {
-    return (
-      <Layout>
-       <Links/>
-     </Layout>
-    );
-  }
-
   const WatchComponent = () => {
     return (
       <Layout>
@@ -89,9 +80,7 @@ useEffect(() => {
 
   const StayInTouchComponent = () => {
     return (
-      <Layout>
        <StayInTouch/>
-     </Layout>
     );
   }
 
@@ -104,7 +93,6 @@ useEffect(() => {
         <Route path="/ThankYou" element={ThankYouComponent()}/>
         <Route path="/TakeAction" element={TakeActionComponent()}/>
         <Route exact path="/Diary" element={DiaryComponent()}/>
-        <Route exact path="/Links" element={LinksComponent()}/>
         <Route exact path="/StayInTouch" element={StayInTouchComponent()}/>
         {/* <Route
             path="/Spaces/:id"

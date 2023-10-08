@@ -28,8 +28,11 @@ const StayInTouch = (props) => {
 
   return(
     <Container style={{minHeight:"82vh", textAlign:"center"}}>
-      <h1 style={{color:"#cec09e", margin: "5% 0"}}>StayInTouch</h1>
-    
+      <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:"1.5em"}}>Stay In Touch</h1>
+      <div>
+        <p><a href="https://www.youtube.com/@rencarnations" target="_blank" style={{textDecoration:"none", color:"white"}}><IconBrandYoutube></IconBrandYoutube> YouTube</a></p>
+        <p><a href="https://www.instagram.com/oiranimes.s/" target="_blank" style={{textDecoration:"none", color:"white"}}><IconBrandInstagram></IconBrandInstagram> Instagram</a></p>
+      </div>
    </Container>
     
     );

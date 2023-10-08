@@ -28,14 +28,11 @@ const TakeAction = (props) => {
 
   return(
     <Container style={{minHeight:"82vh", textAlign:"center"}}>
-      <h1 style={{color:"#cec09e", margin: "5% 0"}}>Take Action</h1>
+      <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:'1.5em'}}>Take Action</h1>
       <div>
-        <p><a href="https://www.patreon.com/rencarnations" target="_blank" style={{textDecoration:"none", color:"white"}}><IconBrandPatreon></IconBrandPatreon> Patreon</a></p>
-        <p><a href="https://issuu.com/theangelarchives/docs/the_angel_archives_-_issue_1_/1?ff" target="_blank" style={{textDecoration:"none", color:"white"}}><IconGlobe></IconGlobe> Angel Archives</a></p>
-        <p><a href="https://www.youtube.com/@rencarnations" target="_blank" style={{textDecoration:"none", color:"white"}}><IconBrandYoutube></IconBrandYoutube> YouTube</a></p>
-        <p><a href="https://distrokid.com/hyperfollow/ren9/visual-experiments" target="_blank" style={{textDecoration:"none", color:"white"}}><IconMusic></IconMusic> Visual Experiments EP</a></p>
-        <p><a href="https://soundcloud.com/rencarnations" target="_blank" style={{textDecoration:"none", color:"white"}}><IconBrandSoundcloud></IconBrandSoundcloud> SoundCloud</a></p>
-        <p><a href="https://www.instagram.com/oiranimes.s/" target="_blank" style={{textDecoration:"none", color:"white"}}><IconBrandInstagram></IconBrandInstagram> Instagram</a></p>
+        <p><a href="https://mail.google.com/mail/u/0/#sent/KtbxLwHHnrtBGzwRrCfKdjskNJQtScVffL?projector=1&messagePartId=0.1" target="_blank" style={{textDecoration:"none", color:"white"}}>Covid Safety 2023</a></p>
+        <p><a href="https://native-land.ca" target="_blank" style={{textDecoration:"none", color:"white"}}>What stolen land are you on?</a></p>
+        <p><a href="https://actionnetwork.org/fundraising/mutual-aid-disaster-relief" target="_blank" style={{textDecoration:"none", color:"white"}}>Mutual Aid Disaster Relief</a></p>
       </div>
    </Container>
     

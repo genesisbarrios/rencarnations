@@ -33,7 +33,7 @@ const ThankYou = (props) => {
             
             </Grid>
             <Grid item sm={6}>
-            <h1 style={{color:"#cec09e", margin: "5% 0"}}>thank you</h1>   
+            <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:'1.5em'}}>thank you</h1>   
             <p style={{color:"#cec09e"}}>through every phase, thank you for your continued support.</p>
             <Button style={{border:"1px solid #cec09e", color:"#cec09e"}}><a href="" style={{textDecoration:"none", color:"#cec09e"}}>Tip Jar</a></Button>
             </Grid>

@@ -9,6 +9,11 @@
   font-size: 1.50em;
 }
 
+.sidebar{
+  color: #cec09e;
+   
+}
+
 .titles{
   color:"#cec09e"
 }
@@ -22,6 +27,7 @@
 
 
 .links{
+  font-size: 16px;
   text-align:"center";
   margin-top:"2%"; 
   text-decoration:"none"; 
