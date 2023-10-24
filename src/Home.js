@@ -55,7 +55,8 @@ const Home = (props) => {
               <img src="ren6.png" width="500px"></img>
             </div>
 
-          <p style={{textAlign:"center", fontFamily:"Helvetica"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e"}}>contact</a>  </p>
+          <p style={{textAlign:"center", fontFamily:"Helvetica"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e"}}>contact</a></p>
+          <p style={{textAlign:"center", fontFamily:"Helvetica"}}><a href="#" className="links" style={{textDecoration:"none", color:"#cec09e"}}>𐦍</a></p>
         </Grid>
         <Grid item sm={2}> </Grid>
       </Grid>

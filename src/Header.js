@@ -34,14 +34,14 @@ return (
    {[false].map((expand) => (
      <Navbar key={expand} expand={expand} bg="#050505" variant="dark" className="mb-3">
        <Container fluid>
-       <NavbarBrand>
+       <NavbarBrand className='m-auto'>
             <a href="/" style={{textDecoration:"none"}}> 
                 <Nav className="headings"  style={{marginLeft:"10%"}} >
                     rencarnations    
                 </Nav>
             </a>  
         </NavbarBrand>
-         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}/>
          <Navbar.Offcanvas
            id={`offcanvasNavbar-expand-${expand}`}
            aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -64,9 +64,9 @@ return (
                  type="search"
                  placeholder="Search"
                  className="me-2"
-                 aria-label="Search"
+                 aria-label="Search" style={{fontFamily:"Garamond"}}
                />
-               <Button variant="outline-warning">Search</Button>
+               <Button style={{border:"1px solid #cec09e", color:"#cec09e", backgroundColor:"#050505", fontFamily:"Garamond"}}>Search</Button>
              </Form>
            </Offcanvas.Body>
          </Navbar.Offcanvas>

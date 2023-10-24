@@ -9,6 +9,12 @@
   font-size: 1.50em;
 }
 
+.bodyText{
+  font-family:"Helvetica";
+  color:white;
+  font-size:1.2em;
+}
+
 .sidebar{
   color: #cec09e;
    
