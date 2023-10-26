@@ -29,9 +29,11 @@ const StayInTouch = (props) => {
   return(
     <Container style={{minHeight:"82vh", textAlign:"center"}}>
       <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:"1.5em"}}>Connect</h1>
-      <div>
+      <div style={{width:"100%"}}>
         <p><a href="https://www.youtube.com/@rencarnations" target="_blank" style={{textDecoration:"none", color:"white"}}><IconBrandYoutube></IconBrandYoutube> YouTube</a></p>
         <p><a href="https://www.instagram.com/oiranimes.s/" target="_blank" style={{textDecoration:"none", color:"white"}}><IconBrandInstagram></IconBrandInstagram> Instagram</a></p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScCpT6JVpNF6C6-P7KKq4wTMdOnW7tVJ9BXTbOgTLyuu6T8jw/viewform?embedded=true" width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> 
+        <div style={{height:"50px"}}></div>
       </div>
    </Container>
     

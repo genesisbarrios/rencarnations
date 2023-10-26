@@ -27,19 +27,18 @@ const ThankYou = (props) => {
   
 
   return(
-    <Container style={{minHeight:"82vh", textAlign:"center"}}>
-      <Grid container style={{marginTop:"25%"}}>
-            <Grid item sm={6}>
-            
-            </Grid>
-            <Grid item sm={6}>
-            <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:'1.5em'}}>thank you</h1>   
-            <p style={{color:"#cec09e"}}>through every phase, thank you for your continued support.</p>
-            <Button style={{border:"1px solid #cec09e", color:"#cec09e"}}><a href="" style={{textDecoration:"none", color:"#cec09e"}}>Tip Jar</a></Button>
-            </Grid>
-           
+    <Grid container style={{minHeight:"87vh", marginTop:"5%", width:"100%"}}>
+      <Grid item sm={12} md={6} style={{textAlign:"center"}}>
+          <img src="tipjar.jpg" style={{width:"65%"}}></img>
+      </Grid>
+      <Grid item md={6} sm={12} style={{marginTop:"12%", textAlign:"center"}}>
+        <div>
+          <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:'1.5em'}}>thank you</h1>   
+          <p style={{color:"#cec09e"}}>through every phase, thank you for your continued support.</p>
+          <Button style={{border:"1px solid #cec09e", color:"#cec09e", marginTop:'20px'}}><a href="https://ko-fi.com/rencarnations" target="_blank" style={{textDecoration:"none", color:"#cec09e"}}>Tip Jar</a></Button>
+        </div>
+      </Grid>
     </Grid>
-   </Container>
     
     );
         
