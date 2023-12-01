@@ -4,6 +4,7 @@ import { createTheme, ThemeProvider } from "@material-ui/core";
 import Listen from "./Listen";
 import Contact from './Contact';
 import Diary from './Diary';
+import TumblrLogin from './TumblrLogin';
 import Watch from './Watch';
 import TakeAction from "./TakeAction";
 import ThankYou from './ThankYou';
@@ -54,6 +55,14 @@ useEffect(() => {
     );
   }
 
+  const TumblrLoginComponent = () => {
+    return (
+      <Layout>
+        <TumblrLogin/>
+     </Layout>
+    );
+  }
+
   const WatchComponent = () => {
     return (
       <Layout>
@@ -92,12 +101,15 @@ useEffect(() => {
         <Route path="/Contact" element={ContactComponent()}/>
         <Route path="/ThankYou" element={ThankYouComponent()}/>
         <Route path="/TakeAction" element={TakeActionComponent()}/>
-        <Route exact path="/Diary" element={DiaryComponent()}/>
+        
+        <Route exact path="/Diary" element={TumblrLoginComponent()}/>
         <Route exact path="/StayInTouch" element={StayInTouchComponent()}/>
-        {/* <Route
-            path="/Spaces/:id"
-            element={SpaceComponent()} />
-        <Route path="/Profile" element={ProfileComponent()}/> */}
+        {/* 
+          <Route exact path="/Diary" element={DiaryComponent()}/>
+          <Route
+             path="/Spaces/:id"
+              element={SpaceComponent()} />
+           <Route path="/Profile" element={ProfileComponent()}/> */}
       </Routes>
   );
 };
