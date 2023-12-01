@@ -28,7 +28,7 @@ const Listen = (props) => {
 
   return(
     <Container style={{minHeight:"82vh", textAlign:"center", fontFamily:"Work Sans"}}>
-      
+       <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:"1.5em"}}>streaming services</h1>
       <Grid container>
             <Grid item sm={4}>
                 <a href="https://open.spotify.com/artist/30NyqNKNWpM78K2NMq1JqE" target="_blank"><IconBrandSpotify color="lightgreen" size={50}></IconBrandSpotify></a>
@@ -41,7 +41,7 @@ const Listen = (props) => {
             </Grid>
           
     </Grid>
-    <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:"1.5em"}}>streaming services</h1>
+   
    </Container>
     
     );
