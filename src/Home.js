@@ -16,10 +16,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faWallet } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
 import { Container, Card, Button } from "@material-ui/core";
+import { v4 as uuidv4 } from 'uuid';
+import { motion } from 'framer-motion';
 
 import { IconGlobe, IconBrandInstagram, IconBrandSoundcloud, IconBrandYoutube, IconBrandPatreon, IconMusic } from '@tabler/icons-react';
 
 const Home = (props) => {
+  const uniqueId = uuidv4();
+
     const navigate = useNavigate();
     const [Posts, setPosts] = useState(null);
 
@@ -45,8 +49,9 @@ const Home = (props) => {
         <Grid container spacing={2}> 
           <Grid item sm={2}> </Grid >
           <Grid item sm={8}>
-            <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/StayInTouch" className="links" style={{textDecoration:"none", color:"#e4ddf3"}}>stay in touch</a>  </p>
             
+              <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/StayInTouch" className="links" style={{textDecoration:"none", color:"#e4ddf3"}}>  <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>stay in touch</motion.div></a>  </p>
+       
             <div style={{marginTop:"10%", textAlign:"center", fontFamily:"Work Sans", marginBottom:"10px", color:'white'}}>
              <p className="mt-5 mb-2" style={{color:"white", fontSize:'0.8em'}}>July 5th, 2020</p>
              <iframe width="80%" height="600px" src="https://www.youtube.com/embed/hQq3hcBkdVg?si=Ys8Zc6TQ4oMU-KA9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -69,7 +74,7 @@ const Home = (props) => {
               </p>
             </div>
 
-            <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e"}}>contact</a></p>
+            <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e"}}> <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>contact</motion.div></a></p>
             <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/Diary" className="links" style={{textDecoration:"none", color:"#cec09e"}}>𐦍</a></p>
           
            

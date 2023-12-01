@@ -12,7 +12,7 @@ import {
 import './App.css';
 import { IconBrandSpotify, IconBrandSoundcloud, IconBrandYoutube, IconBrandApple, IconBrandAmazon } from '@tabler/icons-react';
 import { Container, Card, Button } from "@material-ui/core";
-
+import { motion } from 'framer-motion';
 const ThankYou = (props) => {
   
   useEffect(() => {
@@ -35,7 +35,9 @@ const ThankYou = (props) => {
         <div>
           <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:'1.5em'}}>thank you</h1>   
           <p style={{color:"#cec09e"}}>through every phase, thank you for your continued support.</p>
-          <Button style={{border:"1px solid #cec09e", color:"#cec09e", marginTop:'20px'}}><a href="https://ko-fi.com/rencarnations" target="_blank" style={{textDecoration:"none", color:"#cec09e"}}>Tip Jar</a></Button>
+          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+            <Button style={{border:"1px solid #cec09e", color:"#cec09e", marginTop:'20px'}}><a href="https://ko-fi.com/rencarnations" target="_blank" style={{textDecoration:"none", color:"#cec09e"}}>Tip Jar</a></Button>
+          </motion.div>
         </div>
       </Grid>
     </Grid>
