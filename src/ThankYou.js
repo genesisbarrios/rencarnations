@@ -27,7 +27,7 @@ const ThankYou = (props) => {
   
 
   return(
-    <Grid container style={{minHeight:"87vh", marginTop:"5%", width:"100%"}}>
+    <Grid container style={{minHeight:"87vh", marginTop:"5%", width:"100%", fontFamily:"Garamond"}}>
       <Grid item sm={12} md={6} style={{textAlign:"center"}}>
           <img src="tipjar.jpg" style={{width:"65%"}}></img>
       </Grid>

@@ -27,7 +27,7 @@ const TakeAction = (props) => {
   
 
   return(
-    <Container style={{minHeight:"82vh", textAlign:"center"}}>
+    <Container style={{minHeight:"82vh", textAlign:"center", fontFamily:"Work Sans"}}>
       <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:'1.5em'}}>Take Action</h1>
       <div>
         <p><a href="https://mail.google.com/mail/u/0/#sent/KtbxLwHHnrtBGzwRrCfKdjskNJQtScVffL?projector=1&messagePartId=0.1" target="_blank" style={{textDecoration:"none", color:"white"}}>Covid Safety 2023</a></p>
