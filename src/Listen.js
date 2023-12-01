@@ -12,9 +12,12 @@ import {
 import './App.css';
 import { IconBrandSpotify, IconBrandSoundcloud, IconBrandYoutube, IconBrandApple, IconBrandAmazon } from '@tabler/icons-react';
 import { Container, Card } from "@material-ui/core";
-
+import { motion } from 'framer-motion';
 const Listen = (props) => {
-  
+  const [spotifyHover, setSpotifyHover] = useState(false);
+  const [appleHover, setAppleHover] = useState(false);
+  const [soundcloudHover, setSoundcloudHover] = useState(false);
+
   useEffect(() => {
   
   }, []);
@@ -31,13 +34,28 @@ const Listen = (props) => {
        <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:"1.5em"}}>streaming services</h1>
       <Grid container>
             <Grid item sm={4}>
-                <a href="https://open.spotify.com/artist/30NyqNKNWpM78K2NMq1JqE" target="_blank"><IconBrandSpotify color="lightgreen" size={50}></IconBrandSpotify></a>
+              <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setSpotifyHover(true)}} onHoverEnd={e => {setSpotifyHover(false)}} whileTap={{ scale: 0.8 }}>
+                  <a href="https://open.spotify.com/artist/30NyqNKNWpM78K2NMq1JqE" target="_blank" style={{textDecoration:"none", color:'white'}}>
+                    <img src="/images/trees.gif" style={{width:"90%"}}></img>
+                    {spotifyHover && <p style={{marginTop:"-20%", fontWeight:"400"}}>spotify</p>}
+                  </a>
+                </motion.div>
             </Grid>
             <Grid item sm={4}>
-                <a href="https://music.apple.com/us/artist/ren/1486463057" target="_blank"><IconBrandApple color="pink" size={50}></IconBrandApple></a>
+              <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setAppleHover(true)}} onHoverEnd={e => {setAppleHover(false)}} whileTap={{ scale: 0.8 }}>
+                <a href="https://music.apple.com/us/artist/ren/1486463057" target="_blank" style={{textDecoration:"none", color:'white'}}>
+                <img src="/images/mailbox.gif" style={{width:"90%"}}></img>
+                {appleHover && <p style={{marginTop:"-20%", fontWeight:"400"}}>apple music</p>}
+                </a>
+              </motion.div>
             </Grid>
             <Grid item sm={4}>
-                <a href="https://soundcloud.com/rencarnations" target="_blank"><IconBrandSoundcloud color="orange" size={50}></IconBrandSoundcloud></a>
+             <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setSoundcloudHover(true)}} onHoverEnd={e => {setSoundcloudHover(false)}} whileTap={{ scale: 0.8 }}>
+                <a href="https://soundcloud.com/rencarnations" target="_blank" style={{textDecoration:"none", color:'white'}}>
+                  <img src="/images/letter.gif" style={{width:"90%"}}></img>
+                  {soundcloudHover && <p style={{marginTop:"-20%", fontWeight:"400"}}>soundcloud</p>}
+              </a>
+             </motion.div>
             </Grid>
           
     </Grid>
