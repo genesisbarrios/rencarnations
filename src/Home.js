@@ -70,7 +70,7 @@ const Home = (props) => {
             </div>
 
             <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e"}}>contact</a></p>
-            <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/Diary" target="_blank" className="links" style={{textDecoration:"none", color:"#cec09e"}}>𐦍</a></p>
+            <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/Diary" className="links" style={{textDecoration:"none", color:"#cec09e"}}>𐦍</a></p>
           
            
           </Grid>
