@@ -43,6 +43,7 @@ const TumblrLogin = (props) => {
                     setMessage("Checking our records...");
                     if(inputPassword == PASSWORD){
                         //navigate("https://www.tumblr.com/0trodiario")
+                        setAlert("");
                         window.location.href = "https://www.tumblr.com/0trodiario";
                     }else{
                         setMessage("");
