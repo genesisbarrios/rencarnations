@@ -17,7 +17,6 @@ import { faCheckCircle, faWallet } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
 import { Container, Card, Button } from "@material-ui/core";
 import { v4 as uuidv4 } from 'uuid';
-import { motion } from 'framer-motion';
 
 import { IconGlobe, IconBrandInstagram, IconBrandSoundcloud, IconBrandYoutube, IconBrandPatreon, IconMusic } from '@tabler/icons-react';
 
@@ -62,7 +61,7 @@ const Home = (props) => {
             <div style={{textAlign:"center", fontFamily:"Arial", marginBottom:"8%", color:'white'}}>
               <p className="mt-5 mb-2" style={{color:"white", fontSize:'10px', letterSpacing:"2px"}}>July 28th, 2023</p>
               <iframe width="80%" height="600px" src="https://www.youtube.com/embed/EXAYYSt9Yqw?si=785R3AD6yA4AQY8q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <p className="m-auto mt-2 mb-2 w-50" style={{fontSize:'10px'}}>{"for someone special <3"}</p>
+              <p className="m-auto mt-2 mb-2 w-50" style={{fontSize:'13px'}}>{"for someone special <3"}</p>
               {/* <Button className="mb-5" style={{border:"1px solid #cec09e", color:"#cec09e"}}><a href="https://www.youtube.com/embed/EXAYYSt9Yqw?si=785R3AD6yA4AQY8q" target="_blank" style={{textDecoration:"none", color:"#cec09e"}}>Share</a></Button> */}
             </div>
             

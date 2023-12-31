@@ -35,9 +35,9 @@ const ThankYou = (props) => {
         <div>
           <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:'16px'}}>thank you</h1>   
           <p style={{color:"#cec09e", fontSize:'13px'}}>through every phase, thank you for your continued support.</p>
-          <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>
+        
             <Button style={{border:"1px solid #cec09e", color:"#cec09e", marginTop:'20px'}}><a href="https://ko-fi.com/rencarnations" target="_blank" style={{textDecoration:"none", color:"#cec09e", fontFamily:"Arial", fontSize:"13px"}}>Tip Jar</a></Button>
-          </motion.div>
+  
         </div>
       </Grid>
     </Grid>
