@@ -36,7 +36,7 @@ return (
        <Container fluid>
        <NavbarBrand className='m-auto'>
             <a href="/" style={{textDecoration:"none"}}> 
-                <Nav className="headings"  style={{marginLeft:"10%", fontSize:"28px"}} >
+                <Nav className="headings"  style={{marginLeft:"15%", fontSize:"28px"}} >
                     rencarnations    
                 </Nav>
             </a>  

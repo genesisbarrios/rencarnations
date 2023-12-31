@@ -50,7 +50,7 @@ const Home = (props) => {
           <Grid item sm={2}> </Grid >
           <Grid item sm={8}>
             
-              <p style={{textAlign:"center", fontFamily:"Arial", fontSize:"13px"}}><a href="/StayInTouch" className="links" style={{textDecoration:"none", color:"#e4ddf3"}}>  <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>stay in touch</motion.div></a>  </p>
+              <p style={{textAlign:"center", fontFamily:"Arial", fontSize:"13px"}}><a href="/StayInTouch" className="links" style={{textDecoration:"none", color:"#e4ddf3"}}>stay in touch</a>  </p>
        
             <div style={{marginTop:"10%", textAlign:"center", fontFamily:"Arial", marginBottom:"10px", color:'white'}}>
              <p className="mt-5 mb-2" style={{color:"white", fontSize:'10px', letterSpacing:"2px"}}>July 5th, 2020</p>
@@ -74,7 +74,7 @@ const Home = (props) => {
               </p>
             </div>
 
-            <p style={{textAlign:"center", fontFamily:"Arial"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e", fontSize:"13px"}}> <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>contact</motion.div></a></p>
+            <p style={{textAlign:"center", fontFamily:"Arial"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e", fontSize:"13px"}}>contact</a></p>
             <p style={{textAlign:"center", fontFamily:"Arial"}}><a href="/Diary" className="links" style={{textDecoration:"none", color:"#cec09e",  fontSize:"13px"}}>𐦍</a></p>
           
            
