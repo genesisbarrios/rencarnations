@@ -18,9 +18,28 @@ const Listen = (props) => {
   const [appleHover, setAppleHover] = useState(false);
   const [soundcloudHover, setSoundcloudHover] = useState(false);
 
+  const [width, setWidth] = useState(window.innerWidth);
+
+  function handleWindowSizeChange() {
+      setWidth(window.innerWidth);
+  }
   useEffect(() => {
-  
+    if(window){
+      window.addEventListener('resize', handleWindowSizeChange);
+      return () => {
+          window.removeEventListener('resize', handleWindowSizeChange);
+      }
+    }
   }, []);
+
+  useEffect(() => {
+    if(width && width <= 768){
+      setSpotifyHover(true);
+      setAppleHover(true);
+      setSoundcloudHover(true);
+    }
+
+  }, [width]);
 
   useLayoutEffect(() => {
   
@@ -30,10 +49,10 @@ const Listen = (props) => {
   
 
   return(
-    <Container style={{minHeight:"82vh", textAlign:"center", fontFamily:"Work Sans"}}>
-       <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:"1.5em"}}>streaming services</h1>
+    <Container style={{minHeight:"82vh", textAlign:"center", fontFamily:"Arial", letterSpacing:"3px"}}>
+       <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:"16px"}}>streaming services</h1>
       <Grid container>
-            <Grid item sm={4}>
+            <Grid item sm={12} md={4} style={{marginBottom:"10px"}}>
               <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setSpotifyHover(true)}} onHoverEnd={e => {setSpotifyHover(false)}} whileTap={{ scale: 0.8 }}>
                   <a href="https://open.spotify.com/artist/30NyqNKNWpM78K2NMq1JqE" target="_blank" style={{textDecoration:"none", color:'white'}}>
                     <img src="/images/trees.gif" style={{width:"90%"}}></img>
@@ -41,7 +60,7 @@ const Listen = (props) => {
                   </a>
                 </motion.div>
             </Grid>
-            <Grid item sm={4}>
+            <Grid item sm={12} md={4} style={{marginBottom:"10px"}}>
               <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setAppleHover(true)}} onHoverEnd={e => {setAppleHover(false)}} whileTap={{ scale: 0.8 }}>
                 <a href="https://music.apple.com/us/artist/ren/1486463057" target="_blank" style={{textDecoration:"none", color:'white'}}>
                 <img src="/images/mailbox.gif" style={{width:"90%"}}></img>
@@ -49,7 +68,7 @@ const Listen = (props) => {
                 </a>
               </motion.div>
             </Grid>
-            <Grid item sm={4}>
+            <Grid item sm={12} md={4} style={{marginBottom:"10px"}}>
              <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setSoundcloudHover(true)}} onHoverEnd={e => {setSoundcloudHover(false)}} whileTap={{ scale: 0.8 }}>
                 <a href="https://soundcloud.com/rencarnations" target="_blank" style={{textDecoration:"none", color:'white'}}>
                   <img src="/images/letter.gif" style={{width:"90%"}}></img>

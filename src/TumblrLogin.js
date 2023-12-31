@@ -33,14 +33,16 @@ const TumblrLogin = (props) => {
 
 
     return (
-        <Container style={{minHeight:"65vh", textAlign:"center"}}>
-             <h1 style={{margin: "5% 0", fontFamily:"Work Sans"}}><a href="mailto:mgmt@rencarnations.com" style={{color:"white", textDecoration:"none"}}>Password</a></h1>
+        <Container style={{minHeight:"80vh", textAlign:"center"}}>
+             <h1 style={{marginBottom: "5%", marginTop:"25%", fontFamily:"Arial", fontSize:"16px", letterSpacing:"3px"}}><a href="mailto:mgmt@rencarnations.com" style={{color:"white", textDecoration:"none"}}>password</a></h1>
             <Formik
                 initialValues={{ password: inputPassword}} 
                 validateOnChange={false}
                 validateOnBlur={false}
                 onSubmit={(_, actions) => {
                     setMessage("Checking our records...");
+                    console.log(inputPassword);
+                    console.log(PASSWORD);
                     if(inputPassword == PASSWORD){
                         //navigate("https://www.tumblr.com/0trodiario")
                         setAlert("");
@@ -57,16 +59,16 @@ const TumblrLogin = (props) => {
                     <Field name="password" >
                         {() => (
                         <>
-                            <Input size="xs" style={{  color:"white", width:"15%", marginLeft:"15%"}} 
+                            <Input size="xs" style={{  color:"black",backgroundColor:"#ffe5ec", width:"15%", borderRadius:"10px"}} 
                             value={inputPassword}
                             onChange={(e) => setInputPassword(e.target.value.toLowerCase())}
-                            placeholder={inputPassword || "password"}
+                            placeholder={inputPassword || "  password"}
                             />
                         </>
                         )}
                     </Field>
                     <span style={{display:"inline", marginTop:'5%'}}>
-                        <Button type="submit" style={{margin:"0 20%", backgroundColor:"lightgreen"}}>Enter</Button>
+                        <Button uppercase={false} type="submit" style={{margin:"0 2%", fontSize:"12px", borderRadius:"10px", backgroundColor:"white"}}>enter</Button>
                     </span>
                 </Form>
                 )}

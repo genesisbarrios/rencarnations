@@ -50,19 +50,19 @@ const Home = (props) => {
           <Grid item sm={2}> </Grid >
           <Grid item sm={8}>
             
-              <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/StayInTouch" className="links" style={{textDecoration:"none", color:"#e4ddf3"}}>  <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>stay in touch</motion.div></a>  </p>
+              <p style={{textAlign:"center", fontFamily:"Arial", fontSize:"13px"}}><a href="/StayInTouch" className="links" style={{textDecoration:"none", color:"#e4ddf3"}}>  <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>stay in touch</motion.div></a>  </p>
        
-            <div style={{marginTop:"10%", textAlign:"center", fontFamily:"Work Sans", marginBottom:"10px", color:'white'}}>
-             <p className="mt-5 mb-2" style={{color:"white", fontSize:'0.8em'}}>July 5th, 2020</p>
+            <div style={{marginTop:"10%", textAlign:"center", fontFamily:"Arial", marginBottom:"10px", color:'white'}}>
+             <p className="mt-5 mb-2" style={{color:"white", fontSize:'10px', letterSpacing:"2px"}}>July 5th, 2020</p>
              <iframe width="80%" height="600px" src="https://www.youtube.com/embed/hQq3hcBkdVg?si=Ys8Zc6TQ4oMU-KA9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
              <br></br>
            
             </div>
             
-            <div style={{textAlign:"center", fontFamily:"Work Sans", marginBottom:"8%", color:'white'}}>
-              <p className="mt-5 mb-2" style={{color:"white", fontSize:'0.8em'}}>July 28th, 2023</p>
+            <div style={{textAlign:"center", fontFamily:"Arial", marginBottom:"8%", color:'white'}}>
+              <p className="mt-5 mb-2" style={{color:"white", fontSize:'10px', letterSpacing:"2px"}}>July 28th, 2023</p>
               <iframe width="80%" height="600px" src="https://www.youtube.com/embed/EXAYYSt9Yqw?si=785R3AD6yA4AQY8q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              <p className="m-auto mt-2 mb-2 w-50" style={{fontSize:"0.9em"}}>{"for someone special <3"}</p>
+              <p className="m-auto mt-2 mb-2 w-50" style={{fontSize:'10px'}}>{"for someone special <3"}</p>
               {/* <Button className="mb-5" style={{border:"1px solid #cec09e", color:"#cec09e"}}><a href="https://www.youtube.com/embed/EXAYYSt9Yqw?si=785R3AD6yA4AQY8q" target="_blank" style={{textDecoration:"none", color:"#cec09e"}}>Share</a></Button> */}
             </div>
             
@@ -74,8 +74,8 @@ const Home = (props) => {
               </p>
             </div>
 
-            <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e"}}> <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>contact</motion.div></a></p>
-            <p style={{textAlign:"center", fontFamily:"Work Sans"}}><a href="/Diary" className="links" style={{textDecoration:"none", color:"#cec09e"}}>𐦍</a></p>
+            <p style={{textAlign:"center", fontFamily:"Arial"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e", fontSize:"13px"}}> <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }}>contact</motion.div></a></p>
+            <p style={{textAlign:"center", fontFamily:"Arial"}}><a href="/Diary" className="links" style={{textDecoration:"none", color:"#cec09e",  fontSize:"13px"}}>𐦍</a></p>
           
            
           </Grid>
