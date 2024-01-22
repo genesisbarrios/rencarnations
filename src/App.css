@@ -71,13 +71,10 @@ font-family: 'Arial', sans-serif;
 
 body {
   min-height: 100vh !important;
+  background-color: #030303;
 }
 
 .App-link {
   color: #61dafb;
-}
-
-body{
-  background-color: #030303;
 }
 
