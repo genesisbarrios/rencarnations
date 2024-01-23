@@ -33,10 +33,10 @@ const ThankYou = (props) => {
       </Grid>
       <Grid item md={6} sm={12} style={{marginTop:"12%", textAlign:"center"}}>
         <div>
-          <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:'16px'}}>thank you</h1>   
-          <p style={{color:"#cec09e", fontSize:'13px'}}>through every phase, thank you for your continued support.</p>
+          <h1 style={{color:"#f5b3d1", margin: "5% 0", fontSize:'16px'}}>thank you</h1>   
+          <p style={{color:"#b39f84", fontSize:'13px'}}>through every phase, thank you for your continued support.</p>
         
-            <Button style={{border:"1px solid #cec09e", color:"#cec09e", marginTop:'20px'}}><a href="https://ko-fi.com/rencarnations" target="_blank" style={{textDecoration:"none", color:"#cec09e", fontFamily:"Arial", fontSize:"13px"}}>Tip Jar</a></Button>
+            <Button style={{border:"1px solid #b39f84", color:"#b39f84", marginTop:'20px'}}><a href="https://ko-fi.com/rencarnations" target="_blank" style={{textDecoration:"none", color:"#b39f84", fontFamily:"Arial", fontSize:"13px"}}>Tip Jar</a></Button>
   
         </div>
       </Grid>

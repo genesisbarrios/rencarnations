@@ -51,12 +51,12 @@ return (
            </Offcanvas.Header>
            <Offcanvas.Body style={{backgroundColor:"#050505", fontFamily:"Arial", fontSize:"16px"}}>
              <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="/Listen"  style={{color:"#cec09e"}}>listen</Nav.Link>
+                <Nav.Link href="/Listen"  style={{color:"#f5b3d1"}}>listen</Nav.Link>
                         
-                <Nav.Link href="https://www.youtube.com/@rencarnations" target="_blank"  style={{color:"#cec09e"}}>watch</Nav.Link>
+                <Nav.Link href="https://www.youtube.com/@rencarnations" target="_blank"  style={{color:"#f5b3d1"}}>watch</Nav.Link>
                 {/* <Nav.Link href="/">Shop</Nav.Link> */}
-                <Nav.Link href="/TakeAction"  style={{color:"#cec09e"}}>take action</Nav.Link>
-                <Nav.Link href="/ThankYou"  style={{color:"#cec09e", marginBottom:"10%"}}>thank you</Nav.Link>
+                <Nav.Link href="/TakeAction"  style={{color:"#f5b3d1"}}>take action</Nav.Link>
+                <Nav.Link href="/ThankYou"  style={{color:"#f5b3d1", marginBottom:"10%"}}>thank you</Nav.Link>
                
              </Nav>
              <Form className="d-flex">
@@ -66,7 +66,7 @@ return (
                  className="me-2"
                  aria-label="search"
                />
-               <Button style={{border:"1px solid #cec09e", color:"#cec09e", backgroundColor:"#050505"}}>search</Button>
+               <Button style={{border:"1px solid #f5b3d1", color:"#f5b3d1", backgroundColor:"#050505"}}>search</Button>
              </Form>
            </Offcanvas.Body>
          </Navbar.Offcanvas>

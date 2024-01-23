@@ -27,11 +27,16 @@ const TakeAction = (props) => {
 
   return(
     <Container style={{minHeight:"82vh", textAlign:"center", fontFamily:"Arial"}}>
-      <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:'16px'}}>take action</h1>
+      <h1 style={{color:"#f5b3d1", margin: "5% 0", fontSize:'16px'}}>mutual aid resources</h1>
       <div>
-        <p><a href="https://mail.google.com/mail/u/0/#sent/KtbxLwHHnrtBGzwRrCfKdjskNJQtScVffL?projector=1&messagePartId=0.1" target="_blank" style={{textDecoration:"none", color:"white", fontSize:"13px"}}>covid safety 2023</a></p>
+        
         <p><a href="https://native-land.ca" target="_blank" style={{textDecoration:"none", color:"white", fontSize:"13px"}}>what stolen land are you on?</a></p>
         <p><a href="https://actionnetwork.org/fundraising/mutual-aid-disaster-relief" target="_blank" style={{textDecoration:"none", color:"white", fontSize:"13px"}}>mutual aid disaster relief</a></p>
+        <p style={{color:"#b39f84", margin: "3% 0", fontSize:'16px'}}>4 palestine</p>
+        <p><a href="https://tr.ee/MkrMAfCfoM" target="_blank" style={{textDecoration:"none", color:"white", fontSize:"13px"}}>bds movement</a></p>
+        <p><a href="https://sewaxlydz.notion.site/sewaxlydz/One-Hour-Of-ACTION-69a6f695e0ab480db97cafcd6138d20b" target="_blank" style={{textDecoration:"none", color:"white", fontSize:"13px"}}>one of hour of action</a></p>
+        <p style={{color:"#b39f84", margin: "3% 0", fontSize:'16px'}}>4 covid</p> 
+        <p><a href="https://special.usps.com/testkits " target="_blank" style={{textDecoration:"none", color:"white", fontSize:"13px"}}>order covid home tests</a></p>
       </div>
    </Container>
     

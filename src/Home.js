@@ -49,7 +49,7 @@ const Home = (props) => {
           <Grid item sm={2}> </Grid >
           <Grid item sm={8}>
             
-              <p style={{textAlign:"center", fontFamily:"Arial", fontSize:"13px"}}><a href="/StayInTouch" className="links" style={{textDecoration:"none", color:"#e4ddf3"}}>stay in touch</a>  </p>
+              <p style={{textAlign:"center", fontFamily:"Arial", fontSize:"13px"}}><a href="/StayInTouch" className="links" style={{textDecoration:"none", color:"#f2e9f8"}}>stay in touch</a>  </p>
        
             <div style={{textAlign:"center", fontFamily:"Arial", marginBottom:"8%", color:'white'}}>
               <p className="mt-5 mb-2" style={{color:"white", fontSize:'10px', letterSpacing:"2px", paddingBottom:"5%"}}>Nov 17th, 2023</p>
@@ -74,13 +74,13 @@ const Home = (props) => {
        
             <div className="m-auto mt-2 mb-2 w-50" style={{textAlign:"center"}}>
               <p>
-                <a href="https://www.youtube.com/@rencarnations" target="_blank" style={{textDecoration:"none", marginRight:"20px", color:"#cec09e"}}><IconBrandYoutube></IconBrandYoutube></a>
-                <a href="https://www.instagram.com/oiranimes.s/" target="_blank" style={{textDecoration:"none", color:"#cec09e"}}><IconBrandInstagram></IconBrandInstagram></a>
+                <a href="https://www.youtube.com/@rencarnations" target="_blank" style={{textDecoration:"none", marginRight:"20px", color:"white"}}><IconBrandYoutube></IconBrandYoutube></a>
+                <a href="https://www.instagram.com/oiranimes.s/" target="_blank" style={{textDecoration:"none", color:"white"}}><IconBrandInstagram></IconBrandInstagram></a>
               </p>
             </div>
 
-            <p style={{textAlign:"center", fontFamily:"Arial"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#cec09e", fontSize:"13px"}}>contact</a></p>
-            <p style={{textAlign:"center", fontFamily:"Arial"}}><a href="/Diary" className="links" style={{textDecoration:"none", color:"#cec09e",  fontSize:"13px"}}>𐦍</a></p>
+            <p style={{textAlign:"center", fontFamily:"Arial"}}><a href="/Contact" className="links" style={{textDecoration:"none", color:"#f2e9f8", fontSize:"13px"}}>contact</a></p>
+            <p style={{textAlign:"center", fontFamily:"Arial"}}><a href="/Diary" className="links" style={{textDecoration:"none", color:"white",  fontSize:"13px"}}>𐦍</a></p>
           
            
           </Grid>

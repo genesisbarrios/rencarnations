@@ -50,32 +50,32 @@ const Listen = (props) => {
 
   return(
     <Container style={{minHeight:"82vh", textAlign:"center", fontFamily:"Arial", letterSpacing:"3px"}}>
-       <h1 style={{color:"#cec09e", margin: "5% 0", fontSize:"16px"}}>streaming services</h1>
-      <Grid container>
-            <Grid item sm={12} md={4} style={{marginBottom:"10px"}}>
-              <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setSpotifyHover(true)}} onHoverEnd={e => {setSpotifyHover(false)}} whileTap={{ scale: 0.8 }}>
-                  <a href="https://open.spotify.com/artist/30NyqNKNWpM78K2NMq1JqE" target="_blank" style={{textDecoration:"none", color:'white'}}>
-                    <img src="/images/trees.gif" style={{width:"90%"}}></img>
-                    {spotifyHover && <p style={{marginTop:"-20%", fontWeight:"400"}}>spotify</p>}
-                  </a>
-                </motion.div>
-            </Grid>
-            <Grid item sm={12} md={4} style={{marginBottom:"10px"}}>
-              <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setAppleHover(true)}} onHoverEnd={e => {setAppleHover(false)}} whileTap={{ scale: 0.8 }}>
-                <a href="https://music.apple.com/us/artist/ren/1486463057" target="_blank" style={{textDecoration:"none", color:'white'}}>
-                <img src="/images/mailbox.gif" style={{width:"90%"}}></img>
-                {appleHover && <p style={{marginTop:"-20%", fontWeight:"400"}}>apple music</p>}
-                </a>
-              </motion.div>
-            </Grid>
-            <Grid item sm={12} md={4} style={{marginBottom:"10px"}}>
-             <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setSoundcloudHover(true)}} onHoverEnd={e => {setSoundcloudHover(false)}} whileTap={{ scale: 0.8 }}>
-                <a href="https://soundcloud.com/rencarnations" target="_blank" style={{textDecoration:"none", color:'white'}}>
-                  <img src="/images/letter.gif" style={{width:"90%"}}></img>
-                  {soundcloudHover && <p style={{marginTop:"-20%", fontWeight:"400"}}>soundcloud</p>}
+       <h1 style={{color:"#f5b3d1", margin: "5% 0", fontSize:"16px"}}>streaming services</h1>
+      <Grid container style={{marginBottom:"10%"}}>
+        <Grid item sm={12} md={4} style={{marginBottom:"10px"}}>
+          <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setSpotifyHover(true)}} onHoverEnd={e => {setSpotifyHover(false)}} whileTap={{ scale: 0.8 }}>
+              <a href="https://open.spotify.com/artist/30NyqNKNWpM78K2NMq1JqE" target="_blank" style={{textDecoration:"none", color:'white'}}>
+                <img src="/images/trees.gif" style={{width:"90%"}}></img>
+                {spotifyHover && <p style={{marginTop:"-20%", fontWeight:"400"}}>spotify</p>}
               </a>
-             </motion.div>
-            </Grid>
+            </motion.div>
+        </Grid>
+        <Grid item sm={12} md={4} style={{marginBottom:"10px"}}>
+          <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setAppleHover(true)}} onHoverEnd={e => {setAppleHover(false)}} whileTap={{ scale: 0.8 }}>
+            <a href="https://music.apple.com/us/artist/ren/1486463057" target="_blank" style={{textDecoration:"none", color:'white'}}>
+            <img src="/images/mailbox.gif" style={{width:"90%"}}></img>
+            {appleHover && <p style={{marginTop:"-20%", fontWeight:"400"}}>apple music</p>}
+            </a>
+          </motion.div>
+        </Grid>
+        <Grid item sm={12} md={4} style={{marginBottom:"10px"}}>
+          <motion.div whileHover={{ scale: 1.1 }} onHoverStart={e => {setSoundcloudHover(true)}} onHoverEnd={e => {setSoundcloudHover(false)}} whileTap={{ scale: 0.8 }}>
+            <a href="https://soundcloud.com/rencarnations" target="_blank" style={{textDecoration:"none", color:'white'}}>
+              <img src="/images/letter.gif" style={{width:"90%"}}></img>
+              {soundcloudHover && <p style={{marginTop:"-20%", fontWeight:"400"}}>soundcloud</p>}
+          </a>
+          </motion.div>
+      </Grid>
           
     </Grid>
    
