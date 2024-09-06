@@ -46,7 +46,7 @@ const TumblrLogin = (props) => {
                     if(inputPassword == PASSWORD){
                         //navigate("https://www.tumblr.com/0trodiario")
                         setAlert("");
-                        window.location.href = "https://www.tumblr.com/0trodiario";
+                        window.location.href = "https://www.tumblr.com/r3ndeer";
                     }else{
                         setMessage("");
                         setAlert("Wrong Password, try again!");
